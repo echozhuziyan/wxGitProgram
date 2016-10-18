@@ -13,14 +13,20 @@
   "tabBar":{
         "list":[{
             "pagePath":"pages/firstPage/firstPage",
-            "text":"菜单1"
+            "text":"菜单1",
+            "iconPath":"images/menu1-1.png",
+            "selectedIconPath":"images/menu1-2.png"
+            
         },{
             "pagePath":"pages/logs/logs",
-            "text":"菜单2"
+            "text":"菜单2",
+            "iconPath":"images/menu2-1.png",
+            "selectedIconPath":"images/menu2-2.png"
+            
         }],
-        "color":"HexColor",
-        "selectedColor":"HexColor",
-        "backgroundColor":"white",
+        "color":"#1b1a1a",
+        "selectedColor":"#1b1a1a",
+        "backgroundColor":"#d6d3d3",
         "borderStyle":"white"
     }
 }

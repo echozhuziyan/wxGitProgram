@@ -1,10 +1,11 @@
 Page({
   data: {
-    imgList: [{imgSrc:'http://dayu.oa.com/avatars/echottzhu/profile.jpg?1437197657'}]
+    imgList: ['http://dayu.oa.com/avatars/echottzhu/profile.jpg?1437197657'],
+    previewIndex:0,
+    previewMode: false
   },
   uploadImg: function(){
     var that = this;
-    console.log(this.imgSrc);
     wx.chooseImage({
       count: 9, 
       sourceType: ['album'],
@@ -13,14 +14,27 @@ Page({
         var tempFilePaths = res.tempFilePaths;
         var list = [];
         for(var i = 0;i<tempFilePaths.length;i++){
-          list[i] = {imgSrc:''};
-          list[i].imgSrc = tempFilePaths[i];
+          list[i] = tempFilePaths[i];
         }
         //上传选择的照片
         that.setData({
           imgList: list
         })
       }
+    })
+  },
+  previewImg: function(event){
+    var imgsrc = event.target.dataset.src;
+    var previewIndex = this.data.imgList.indexOf(imgsrc);
+    this.setData({
+      previewIndex:previewIndex,
+      previewMode:true
+    })
+  },
+  leavePreviewImg: function(){
+    this.setData({
+      previewIndex: 0,
+      previewMode:false
     })
   },
   onLoad: function () {

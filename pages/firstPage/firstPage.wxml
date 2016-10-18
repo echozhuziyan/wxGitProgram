@@ -1,10 +1,17 @@
 <!--firstPage.wxml-->
 <view class="container">
-  
-  <view class="uploadButton">
-    <button type="primary" plain="true" bindtap="uploadImg"> 上传 </button>
-  </view>
   <view class="imgContainer">
-    <image wx:for="{{imgList}}" wx:for-item="item" mode="aspectFill" src="{{item.imgSrc}}"></image>
+    <image wx:for="{{imgList}}" wx:for-item="item" mode="aspectFill" src="{{item}}" bindtap="previewImg" data-src="{{item}}"></image>
+  </view>
+  <view class="uploadButton">
+    <button type="primary" size="mini" bindtap="uploadImg"> 添加照片 </button>
   </view>
 </view>
+
+<swiper class="swiper-container" duration="400" current="{{previewIndex}}"  style="display: {{previewMode ? 'block' : 'none'}};" bindtap="leavePreviewImg">
+  <block wx:for="{{imgList}}" wx:for-item="item">
+    <swiper-item>
+      <image src="{{item}}" mode="aspectFit"></image>
+    </swiper-item>
+  </block>
+</swiper>
