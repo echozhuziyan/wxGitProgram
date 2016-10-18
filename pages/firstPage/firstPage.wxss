@@ -1,0 +1,18 @@
+.container{
+   padding:0px;
+}
+.uploadButton{
+    margin-top:10px;
+}
+.imgContainer{
+    margin-top: 20px;
+}
+.imgContainer image{
+    padding:5px;
+    height: 150px;
+    width: 160px;
+    background-color: #eeeeee;
+    position: relative;
+    left:5%;
+    margin-right:5%;
+}

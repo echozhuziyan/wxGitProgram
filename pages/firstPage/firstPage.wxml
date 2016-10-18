@@ -1,0 +1,10 @@
+<!--firstPage.wxml-->
+<view class="container">
+  
+  <view class="uploadButton">
+    <button type="primary" plain="true" bindtap="uploadImg"> 上传 </button>
+  </view>
+  <view class="imgContainer">
+    <image wx:for="{{imgList}}" wx:for-item="item" mode="aspectFill" src="{{item.imgSrc}}"></image>
+  </view>
+</view>
